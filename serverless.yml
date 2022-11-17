@@ -1,0 +1,21 @@
+org: andr3iii
+app: web3-exam
+service: parser-and-signer
+frameworkVersion: '3'
+
+plugins:
+  - 'serverless-plugin-typescript'
+  - serverless-plugin-optimize
+  - serverless-offline
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+
+functions:
+  api:
+    handler: src/lambda.handler
+    events:
+      - http:
+          method: any
+          path: /{any+}
