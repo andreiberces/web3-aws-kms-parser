@@ -1,21 +1,35 @@
 org: andr3iii
-app: web3-exam
+app: parser-and-signer
 service: parser-and-signer
 frameworkVersion: '3'
+useDotenv: true
 
 plugins:
-  - 'serverless-plugin-typescript'
+  - serverless-plugin-typescript
   - serverless-plugin-optimize
   - serverless-offline
 
 provider:
   name: aws
   runtime: nodejs14.x
+  region: ap-northeast-1
+  environment:
+    APP_PORT: ${env:APP_PORT}
+    AWS_ACCESS_KEY_ID: ${env:AWS_ACCESS_KEY_ID}
+    AWS_SECRET_ACCESS_KEY: ${env:AWS_SECRET_ACCESS_KEY}
+    AWS_REGION: ${env:AWS_REGION}
+    ALCHEMY_URL: ${env:ALCHEMY_URL}
 
 functions:
-  api:
-    handler: src/lambda.handler
+  main:
+    handler: src/main.handler
     events:
       - http:
           method: any
-          path: /{any+}
+          path: '{proxy+}'
+
+custom:
+  optimize:
+    external: ['swagger-ui-dist']
+  serverless-offline:
+    noPrependStageInUrl: true
