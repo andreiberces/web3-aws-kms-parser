@@ -1,6 +1,6 @@
 org: andr3iii
-app: parser-and-signer
-service: parser-and-signer
+app: aws-kms-parser-be
+service: aws-kms-parser-be
 frameworkVersion: '3'
 useDotenv: true
 
@@ -15,10 +15,9 @@ provider:
   region: ap-northeast-1
   environment:
     APP_PORT: ${env:APP_PORT}
-    AWS_ACCESS_KEY_ID: ${env:AWS_ACCESS_KEY_ID}
-    AWS_SECRET_ACCESS_KEY: ${env:AWS_SECRET_ACCESS_KEY}
-    AWS_REGION: ${env:AWS_REGION}
-    ALCHEMY_URL: ${env:ALCHEMY_URL}
+    AWS_ACCESS_KEY_IDD: ${env:AWS_ACCESS_KEY_IDD}
+    AWS_SECRET_ACCESS_KEYY: ${env:AWS_SECRET_ACCESS_KEYY}
+    AWS_REGIONN: ${env:AWS_REGIONN}
 
 functions:
   main:

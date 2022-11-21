@@ -1,22 +1,14 @@
 import { Injectable } from '@nestjs/common'
 import { KMS } from 'aws-sdk'
-import { ethers } from 'ethers'
 import * as asn1 from 'asn1.js'
-import { keccak256 } from 'js-sha3';
+import { keccak256 } from 'js-sha3'
 @Injectable()
 export class ParserService {
-  async provider() {
-    const provider = new ethers.providers.JsonRpcProvider(
-      process.env.ALCHEMY_URL,
-    )
-    return provider
-  }
-
   async getPublicKey(params: any) {
     const kms = new KMS({
-      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-      region: process.env.AWS_REGION,
+      accessKeyId: process.env.AWS_ACCESS_KEY_IDD,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEYY,
+      region: process.env.AWS_REGIONN,
     })
     return kms.getPublicKey(params).promise()
   }
@@ -40,6 +32,6 @@ export class ParserService {
     const buf2 = Buffer.from(address, 'hex')
     const walletAddress = '0x' + buf2.slice(-20).toString('hex')
     console.log('Generated address: ' + walletAddress)
-    return {  walletAddress: walletAddress }
+    return { walletAddress: walletAddress }
   }
 }

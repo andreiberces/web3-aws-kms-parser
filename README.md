@@ -80,6 +80,11 @@ Nest is [MIT licensed](LICENSE).
 - serverless-plugin-optimize: Plugin to transpile and minify your code
 - serverless-offline plugin: Plugin to be able to test your app offline.
 - AWS SDK for JavaScript : Provide aws intergration to your project.
-- The Ethers Project : A complete Ethereum wallet implementation and utilities in JavaScript (and TypeScript).
 - ASN1js : ASN1js is the first library for BER encoding/decoding in Javascript designed for browser use. BER is the basic encoding rules for ASN.1 that all others are based on, DER is the encoding rules used by PKI applications - it is a subset of BER. The ASN1js library was tested against freely available ASN.1:2008 test suite, with some limitations related to JavaScript language.
+- js-sha3: A simple SHA-3 / Keccak / Shake hash function for JavaScript supports UTF-8 encoding.
 - Swagger UI Express : This module allows you to serve auto-generated swagger-ui generated API docs from express, based on a swagger.json file. The result is living documentation for your API hosted from your API server via a route.
+
+# To Test
+
+- visit: (https://mvcc3gww6l.execute-api.ap-northeast-1.amazonaws.com/dev/parser/wallet-address/9d700837-ea26-4c86-845c-d00893a96303)
+- just add your created key id after the wallet-address/{key-id}
